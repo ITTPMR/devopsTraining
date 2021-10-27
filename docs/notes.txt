@@ -1,0 +1,26 @@
+
+=========================
+Commands
+=========================
+
+apt-get update ==> once AWS machine starts in Terminal
+
+=========================
+Bit Bucket
+=========================
+BitBucket HTTP URL: https://github.com/ITTPMR/master.git
+BitBucket SSH URL: git@github.com:ITTPMR/master.git
+
+=========================
+AWS
+=========================
+ACCESS_KEY = AKIA3XEYLHAUGYYYBFWF
+SECRET_KEY = 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
+LINUS AWS AMI = ami-041d6256ed0f2061c
+
+=========================
+Jenkins
+=========================
+Jenkkins UserName: Mohamed_Riyaz-ITT
+
+
