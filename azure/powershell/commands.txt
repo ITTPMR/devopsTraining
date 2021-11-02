@@ -1,0 +1,19 @@
+POWER SHELL COMMANDS
+
+
+###################################################################################
+Configure the Windows Powershell to display only the current folder name in
+the shell prompt
+###################################################################################
+Function Prompt {"$((Get-Location | Get-Item).Name)>"}
+
+###################################################################################
+Enable PowerShell Scripts [Restricted/RemoteSigned/Unrestricted/AllSigned]
+###################################################################################
+Set-ExecutionPolicy Unrestricted
+
+###################################################################################
+The following command will bring up an elevated Windows PowerShell as an administrator
+###################################################################################
+start-process PowerShell -verb runas
+
