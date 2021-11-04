@@ -1,12 +1,22 @@
-﻿# Check the word is Palindrome
+﻿# Script for Palindrome
 
-$input_str = (Read-Host "Enter the string").ToLower()
+# Description: Get the Input from the User and check the given input is Palindrome or not Palindrome.
 
-$out = $input_str.ToCharArray()
+# params: input
+$input = (Read-Host "Enter the Input")
 
-[array]::Reverse($out)
+# Declaring empty variable to store the reversed input  
+$reversed_input = ""
 
-$reversed_str = -join($out)
+# Converting the input into character array
+$input_arr = $input.ToCharArray()
 
-"$input_str equals $reversed_str`:`r`n—–---"
-$input_str -eq $reversed_str
+foreach($i in $input_arr){
+  $reversed_input = $i + $reversed_input
+}
+
+if($input -eq $reversed_input){
+  Write-Host "$input is Palindrome"
+} else {
+  Write-Host "$input is not a Palindrome"
+}
