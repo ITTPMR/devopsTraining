@@ -3,24 +3,40 @@
 # Description: Get the Year from the User and check that year is Leap Year or not.
 
 # params: year: Integer
-$year = Read-Host "Enter year in 4 digit format"
 
-# Method-1: Find the Leap Year based on February month
-$leap = [datetime]::DaysInMonth($year, 2)
-if($leap -eq 29){Write-Host "$year is a Leap year"} else {Write-Host "$year is not a Leap year"}
-
-# Method-2: Find the Leap Year by using modulo operator
-if($year % 4 -eq 0){
-  if ($year % 100 -eq 0){
-    if($year % 400 -eq 0){
-      Write-Host "$year is a Leap year"
-    }
-    else {
-      Write-Host "$year is not a Leap year"
-    }
-  } else {
-    Write-Host "$year is a Leap year"
+#Approach1: Find the Leap Year based on February days count
+function FindLeapYearByMonth{
+  param([int]$year)
+  process{
+    $leap = [datetime]::DaysInMonth($year, 2)
+    if($leap -eq 29){return "$year is a Leap year"} else {return "$year is not a Leap year"}
   }
-} else {
-  Write-Host "$year is not a Leap year"
 }
+
+#Approach2: Find the Leap Year using Logical Method
+function FindLeapYear{
+  param([int]$year)
+  process{
+    if($year % 4 -eq 0){
+      if ($year % 100 -eq 0){
+        if($year % 400 -eq 0){
+          return "$year is a Leap year"
+        }
+        else {
+          return "$year is not a Leap year"
+        }
+      } else {
+        return "$year is a Leap year"
+      }
+    } else {
+      return "$year is not a Leap year"
+    }
+  }
+}
+
+# Call the Function
+# FindLeapYear 2000
+
+# If you want to run the script Please Copy and paste into powershell terminal => FindLeapyear -year user_input
+# Example: FindLeapyear -year 2003
+# Example: FindLeapyearByMonth -year 2004
