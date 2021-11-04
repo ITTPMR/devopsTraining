@@ -3,7 +3,7 @@ Write-Host "The following cmdlet will be executed on two servers"
 
 Invoke-Command -ComputerName testserver1,testeserver2 -ScriptBlock {Write-Host "Local system name is" $localhost}
 Write-Host "Executing a script on remote server"
-Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath C:\Users\p.m.riyaz\Desktop\master-nogit\Week1 - Power Shell\check_armstrong_number
 Write-Host "script executed successfully"
 Write-Host "Creating session example"
 $cr=Get-Credential
