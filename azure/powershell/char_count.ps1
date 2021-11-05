@@ -1,21 +1,27 @@
 ﻿# Script for count the number of charaters occurence in a given string
 
 # params input_str: String
-$input_str = (Read-Host "Enter the string").ToLower()
 
-# Converting the input string into character array
-$input_str_list = $input_str.toCharArray()
+function CountCharOccurInString{
+   param([string]$input_val)
+   process {
+     $input_val = $input_val.ToLower()
+     $input_str_list = $input_val.toCharArray()  # Converting the input string into character array
+     $count = 1
+     $dict = @{}
 
-$count = 1
-$dict = @{}
-
-foreach($key in $input_str_list) {    
-   if($key -in $dict.keys) {
-     $dict[$key] = $dict.$key += $count;
+     foreach($key in $input_str_list) {    
+       if($key -in $dict.keys) {
+       $dict[$key] = $dict.$key += $count;
+     }
+     else{
+       $dict.add($key, $count)
+     }
    }
-   else{
-     $dict.add($key, $count)
-   }
+   echo($dict)
+  }
 }
 
-echo($dict)
+
+# If you want to run the script Please Copy => CountCharOccurInString -input_val user_input
+# Example: CountCharOccurInString -input_val maadam
