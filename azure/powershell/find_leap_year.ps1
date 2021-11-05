@@ -35,8 +35,8 @@ function FindLeapYear{
 }
 
 # Call the Function
-# FindLeapYear 2000
+# FindLeapYear(2000)
 
-# If you want to run the script Please Copy and paste into powershell terminal => FindLeapyear -year user_input
-# Example: FindLeapyear -year 2003
+# If you want to run the script Please Copy and paste into powershell terminal => FindLeapYear -year user_input
+# Example: FindLeapYear -year 2003
 # Example: FindLeapyearByMonth -year 2004

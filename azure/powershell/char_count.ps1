@@ -10,7 +10,7 @@ function CountCharOccurInString{
      $count = 1
      $dict = @{}
 
-     foreach($key in $input_str_list) {    
+     foreach($key in $input_str_list) {   
        if($key -in $dict.keys) {
        $dict[$key] = $dict.$key += $count;
      }
@@ -22,6 +22,9 @@ function CountCharOccurInString{
   }
 }
 
+
+# Function Call
+# CountCharOccurInString("madam")
 
 # If you want to run the script Please Copy => CountCharOccurInString -input_val user_input
 # Example: CountCharOccurInString -input_val maadam

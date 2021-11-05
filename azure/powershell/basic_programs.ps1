@@ -1,6 +1,7 @@
 ﻿class BasicProgram {
   [string] ReverseString(){
     [string] $input_val = (Read-Host "Enter the Input to Reverse a String") # Run Time Input
+   
     $reversed_str = "" # Declaring empty string to store the reversed string
     $str_list = $input_val.ToCharArray() # Converting the string to character array
     foreach($str in $str_list){
