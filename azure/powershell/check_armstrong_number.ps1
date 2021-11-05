@@ -16,7 +16,7 @@ function checkArmstrongNumber{
 
     Do{
       $r = $temp % 10
-      $r = [Math]::Floor($r) # Floor the Reminder value
+      $r = [Math]::Floor($r) # Floor the Reminder value. If the reminder value is 1.8 it will give 1.
       $n = [Math]::Pow($r, $order)
       $temp = $temp / 10
       $sum = $sum + $n
@@ -31,8 +31,8 @@ function checkArmstrongNumber{
   }
 }
 
-# Function Call
-# checkArmstrongNumber 253
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# checkArmstrongNumber(153)
 
 # If you want to run the script Please Copy and paste into powershell terminal => checkArmstrongNumber -input_val user_input
 # Example: checkArmstrongNumber -input_val 153

@@ -7,15 +7,19 @@
 function ReverseString {
   param([string]$input_val)
   process {
+    $counts = ($input_val).length - 1  # Total length of input_val. Index starts from zero that's why minus 1 from total count.
     $reversed_str = "" # Declaring empty string to store the reversed string
-    $str_list = $input_val.ToCharArray() # Converting the string to character array
 
-    foreach($str in $str_list){
-      $reversed_str = $str + $reversed_str
+    for($i=$counts; $i -ge 0; $i--){
+      $reversed_str = $reversed_str + $input_val[$i]
     }
     return "The reverse string of $input_val is: $reversed_str"
   }
 }
+
+
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# ReverseString("Is the String is Reverse")
 
 # If you want to run the script Please Copy => ReverseString -input_val user_input
 # Example:ReverseString -input_val powershell

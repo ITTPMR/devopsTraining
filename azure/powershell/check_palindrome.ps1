@@ -8,11 +8,11 @@ function CheckPalindrome {
   param([string] $input_val)
   process {
     $input_val_lc = $input_val.ToLower()
-    $reversed_input = ""  # Declaring empty variable to store the reversed input
-    $input_arr = $input_val_lc.ToCharArray() # Converting the string into character array
+    $counts = ($input_val).length - 1  # Total length of input_val. Index starts from zero that's why minus 1 from total count.
+    $reversed_input = ""  # Declaring empty variable to store the reversed input.
 
-    foreach($i in $input_arr){
-      $reversed_input = $i + $reversed_input
+    for($i=$counts; $i -ge 0; $i--){
+      $reversed_input = $reversed_input + $input_val[$i]
     }
 
     if($input_val -eq $reversed_input){
@@ -23,8 +23,8 @@ function CheckPalindrome {
   }
 }
 
-# Function Call
-#  CheckPalindrome madam
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# CheckPalindrome("madam")
 
 # If you want to run the script Please Copy and paste into powershell terminal => CheckPalindrome -input_val user_input
 # Example: CheckPalindrome -input_val madam

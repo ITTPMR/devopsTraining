@@ -4,7 +4,7 @@
 
 # params: year: Integer
 
-#Approach1: Find the Leap Year based on February days count
+#Approach1: Find the Leap Year based on month February days count
 function FindLeapYearByMonth{
   param([int]$year)
   process{
@@ -34,9 +34,9 @@ function FindLeapYear{
   }
 }
 
-# Call the Function
-# FindLeapYear 2000
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# FindLeapYear(2000)
 
-# If you want to run the script Please Copy and paste into powershell terminal => FindLeapyear -year user_input
-# Example: FindLeapyear -year 2003
+# If you want to run the script Please Copy and paste into powershell terminal => FindLeapYear -year user_input
+# Example: FindLeapYear -year 2003
 # Example: FindLeapyearByMonth -year 2004

@@ -1,4 +1,4 @@
-﻿Write-Host "Script fo remoting in PowerShell"
+﻿Write-Host "Script for remoting in PowerShell"
 
 # Configures the computer to receive remote commands
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
@@ -10,14 +10,19 @@ Get-PSSessionConfiguration  -Name Microsoft*
 $session = New-PSSession -ComputerName localhost
 Get-PSSession
 
+$command = {
+  # Get-Process
+  # Get-Service
+  ls
+}
 #Runs commands on local and remote computers
-Invoke-Command -Session $session -ScriptBlock {ls}
+Invoke-Command -Session $session -ScriptBlock {command}
 
 Enter-PSSession -Session $session  # Start an interactive session
 Write-Host "Session created"
 
-# Copy-Item -path C:\test\MyTest.txt -Destination c:\frommypc.txt -ToSession $session
-# Get-Content c:\frommypc.txt
+# Access a file
+Get-Content C:\Users\p.m.riyaz\Desktop\frommypc.txt
 HOSTNAME.EXE
 
 Exit-PSSession
