@@ -31,8 +31,8 @@ function checkArmstrongNumber{
   }
 }
 
-# Function Call
-checkArmstrongNumber(371)
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# checkArmstrongNumber(153)
 
 # If you want to run the script Please Copy and paste into powershell terminal => checkArmstrongNumber -input_val user_input
 # Example: checkArmstrongNumber -input_val 153

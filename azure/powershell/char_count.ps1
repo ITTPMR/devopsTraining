@@ -23,8 +23,8 @@ function CountCharOccurInString{
 }
 
 
-# Function Call
-# CountCharOccurInString("madam")
+# Use to Function Call, Please Uncomment the below line and pass the arguement.
+# CountCharOccurInString("abss")
 
 # If you want to run the script Please Copy => CountCharOccurInString -input_val user_input
 # Example: CountCharOccurInString -input_val maadam

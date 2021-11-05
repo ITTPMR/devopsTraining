@@ -1,22 +1,24 @@
 ﻿class BasicProgram {
   [string] ReverseString(){
     [string] $input_val = (Read-Host "Enter the Input to Reverse a String") # Run Time Input
-   
+    $counts = ($input_val).length - 1  # Total length of input_val. Index starts from zero that's why minus 1 from total count.
     $reversed_str = "" # Declaring empty string to store the reversed string
-    $str_list = $input_val.ToCharArray() # Converting the string to character array
-    foreach($str in $str_list){
-      $reversed_str = $str + $reversed_str
+    for($i=$counts; $i -ge 0; $i--){
+      $reversed_str = $reversed_str + $input_val[$i]
     }
-    return "The reverse string of $($input_val) is: $reversed_str"
+    return "The reverse string of $input_val is: $reversed_str"
   }
 
   [string] CheckPalindrome(){
     $input_val = (Read-Host "Enter the Input to check Palindrome or Not palindrome") # Run Time Input
-    $reversed_input = ""
-    $input_arr = $input_val.toCharArray() # Converting the input string into character array 
-    foreach($i in $input_arr){
-      $reversed_input = $i + $reversed_input
+    $input_val_lc = $input_val.ToLower()
+    $counts = ($input_val).length - 1  # Total length of input_val. Index starts from zero that's why minus 1 from total count.
+    $reversed_input = ""  # Declaring empty variable to store the reversed input.
+
+    for($i=$counts; $i -ge 0; $i--){
+      $reversed_input = $reversed_input + $input_val[$i]
     }
+
     if($($input_val) -eq $reversed_input){
       return "$($input_val) is Palindrome"
     } else {
@@ -94,10 +96,8 @@
 # Function Call
 $program = [BasicProgram]::new()
 
-
 $program.ReverseString()
 $program.CountCharInString()
 $program.CheckPalindrome()
 $program.CheckArmstongNumber()
 $program.FindLeapYear()
-$program.FindLeapYearByMonthBase()
