@@ -11,7 +11,7 @@ Genereated on: 10 November 2021
 class Stack{
   [System.Collections.ArrayList]$items
   Stack($i){
-    $this.items = $i
+    $this.items = @()
   }
   [string] push($input_val) {
     $this.items += $input_val  
@@ -25,18 +25,31 @@ class Stack{
     return "Removed $val"
   }
 
-  [System.Collections.ArrayList] GetList() { 
-    return $this.items
+  
+  [System.Collections.ArrayList] ClearList() {
+    $empty_list = $this.items.clear()
+    return $empty_list
+  }
+
+  [String] GetList() {
+   $count = ($this.items.count - 1)
+    if($count -lt 0){
+      return "Stack List is Empty"
+    } else { 
+      return ("Stack List: $($this.items)")
+    }
   }
 }
 
-$items =  @()
-
-# Function Call
+#Function Call
 $stack = [Stack]::new($items)
-
-$stack.push(10)
-$stack.push(20)
-$stack.push(30)
-$stack.pop()
-$stack.GetList()
+$stack.ClearList()  # Clear the Stack List
+$stack.GetList()    # Get the Stack List. It's Empty
+$stack.push(20)     # Added 10 into the Stack List
+$stack.push(20)     # Added 20 into the Stack List
+$stack.push(30)     # Added 30 into the Stack List
+$stack.GetList()    # Get the Stack List. Stack List: 10 20 30
+$stack.pop()        # Pop up the element from the Stack List. 30 is Removed
+$stack.pop()        # Pop up the element from the Stack List. 20 is Removed
+# $stack.pop()
+$stack.GetList()    # Get the Stack List. Stack List: 10
