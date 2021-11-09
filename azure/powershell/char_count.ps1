@@ -1,6 +1,6 @@
 ﻿# Script for count the number of charaters occurence in a given string
 
-# params input_str: String
+# params input_val: String
 
 function CountCharOccurInString{
    param([string]$input_val)
@@ -12,19 +12,19 @@ function CountCharOccurInString{
 
      foreach($key in $input_str_list) {   
        if($key -in $dict.keys) {
-       $dict[$key] = $dict.$key += $count;
+         $dict[$key] = $dict.$key += $count;
+       }
+       else{
+         $dict.add($key, $count)
+       }
      }
-     else{
-       $dict.add($key, $count)
-     }
-   }
    echo($dict)
   }
 }
 
 
 # Use to Function Call, Please Uncomment the below line and pass the arguement.
-# CountCharOccurInString("abss")
+# CountCharOccurInString("Madagascar")
 
-# If you want to run the script Please Copy => CountCharOccurInString -input_val user_input
-# Example: CountCharOccurInString -input_val maadam
+# If you want to run the script Please Copy and paste into powershell terminal => CountCharOccurInString -input_val user_input
+# Example: CountCharOccurInString -input_val 153
